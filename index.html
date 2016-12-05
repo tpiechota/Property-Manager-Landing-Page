@@ -48,9 +48,16 @@
     <LINK id="wpgrade-main-style-css" href="css/style.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- custom script - start -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all">
-    <link href="assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="all">
+    <link href="rsvp/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="rsvp/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="all">
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="rsvp/jquery-1.11.3-jquery.min.js"></script>
+
+
+
+    <script src="rsvp/validation.min.js"></script>
+    <link href="rsvp/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="rsvp/script.js"></script>
     <!-- custom script - end -->
 
     <SCRIPT src="js/modernizr.min.js" type="text/javascript"></SCRIPT>
@@ -104,14 +111,420 @@
     <LINK id="customify_output_style" href="css/head_styles.css" rel="stylesheet" type="text/css" media="all">
 
     <META name="GENERATOR" content="MSHTML 11.00.9600.18125">
+    <script type="text/javascript">
 
+        $(document).ready(function() {
+            //When checkboxes/radios checked/unchecked, toggle background color
+            $('.form-group').on('click','input[type=radio]',function() {
+                $(this).closest('.form-group').find('.radio-inline, .radio').removeClass('checked');
+                $(this).closest('.radio-inline, .radio').addClass('checked');
+            });
+            $('.form-group').on('click','input[type=checkbox]',function() {
+                $(this).closest('.checkbox-inline, .checkbox').toggleClass('checked');
+            });
+
+            //Show additional info text box when relevant checkbox checked
+            $('.additional-info-wrap input[type=checkbox]').click(function() {
+                if($(this).is(':checked')) {
+                    $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');
+                }
+                else {
+                    $(this).closest('.additional-info-wrap').find('.additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');
+                }
+
+            });
+            //Show additional info text box when relevant radio checked
+            $('input[type=radio]').click(function() {
+                $(this).closest('.form-group').find('.additional-info-wrap .additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');
+                if($(this).closest('.additional-info-wrap').length > 0) {
+                    $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');
+                }
+            });
+
+            $('#radio_no, #radio_yes').change(function(){
+                yes_no();
+            });
+
+            var existing = false;
+
+            $('input[name=rsvp_type]').change(function(){
+                if($(this).val() == 1) {
+                    $('.btn-value').text('Wyślij');
+                    $('#form-new').show();
+
+                    existing = false;
+
+                } else if($(this).val() == 0) {
+                    $("#btn-submit").html('<span class="glyphicon glyphicon-edit"></span> &nbsp; Edytuj');
+                    $('#form-new').hide();
+
+                    existing = false;
+                }
+            });
+
+            $("#guest_phone").keydown(function (e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                        // Allow: Ctrl+A
+                    (e.keyCode == 65 && e.ctrlKey === true) ||
+                        // Allow: Ctrl+C
+                    (e.keyCode == 67 && e.ctrlKey === true) ||
+                        // Allow: Ctrl+X
+                    (e.keyCode == 88 && e.ctrlKey === true) ||
+                        // Allow: home, end, left, right
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+
+            $("#guest_guests").change(function () {
+                console.log("Number of guests: " + $('#guest_guests').val());
+                guestchanged();
+            });
+
+            $(".alpha-only").on("keydown", function(event){
+                // Ignore controls such as backspace
+                var arr = [8,9,16,17,20,32,35,36,37,38,39,40,45,46];
+
+                // Allow letters
+                for(var i = 65; i <= 90; i++){
+                    arr.push(i);
+                }
+
+                if(jQuery.inArray(event.which, arr) === -1){
+                    event.preventDefault();
+                }
+            });
+
+            $(".alpha-only").on("input", function(){
+                var regexp = /([^a-zA-Z'] )+([A-Za-z']+)*$/g;
+                if($(this).val().match(regexp)){
+                    $(this).val( $(this).val().replace(regexp,'') );
+                }
+            });
+
+            $(".form-group input").on('blur', function(){
+                if($(this).next('label.error').length > 0) {
+                    $(this).css('border', '1px solid #bf504d');
+                }
+            });
+
+        });
+
+        function yes_no(){
+            var yes = $('#radio_yes');
+            var no = $('#radio_no');
+            var val = parseInt($("#guest_guests").val(), 10);
+            var i;
+            if(no.is(':checked')){
+                $('#form_new_no').hide();
+                $("#guest_guests").val(-1);
+                for (i=1; i <= val ;i++) {
+                    $("#guest_guests_row"+i).hide();
+                }
+                $(".radio_yes_ span").text("Przyjadę");
+                $(".radio_no_ span").text("Nie przyjadę");
+                $("#guest_guests").css('color','#999');
+            }
+            if(yes.is(':checked')){
+                $('#form_new_no').show();
+            }
+            console.log("Yes / No: " + $('input[name=radio_yes_no]:checked', '#rsvp-form').val());
+        }
+
+        function guestchanged() {
+            /* Hide and show fields depending on guest number */
+
+            var val = parseInt($("#guest_guests").val(), 10);
+            var i;
+
+            if($("#guest_guests").value != -1){
+                $("#guest_guests").css('color','#555');
+            }
+
+            for (i=val+1;i<=5;i++) {
+                $("#guest_guests_row"+i).hide();
+            }
+            for (i=1;i<=val;i++) {
+                $("#guest_guests_row"+i).show();
+            }
+            if (val === 0) {
+                $(".radio_yes_ span").text("Przyjadę");
+                $(".radio_no_ span").text("Nie przyjadę");
+            } else {
+                $(".radio_yes_ span").text("Przyjedziemy");
+                $(".radio_no_ span").text("Nie przyjedziemy");
+            }
+
+        }
+
+        function pageload() {
+            guestchanged();
+        }
+
+
+
+    </script>
+
+    <style type="text/css">
+        label.rsvp_type, label.radio_yes_no, label.radio_veg_yes_no, label.checkbox-inline, label.radio, label.checkbox {
+            cursor: pointer;
+            font-weight: 400;
+            margin-bottom: 10px !important;
+            margin-right: 2%;
+            margin-left:0;
+            padding: 10px 10px 10px 30px;
+        }
+        label.rsvp_type.checked,
+        label.radio_yes_no.checked,
+        label.radio_veg_yes_no.checked {
+            color: #bf504d !important;
+            font-weight: bold;
+        }
+        .columns label.rsvp_type,
+        .columns label.radio_yes_no,
+        .columns label.radio_veg_yes_no {
+            min-width: 190px;
+            vertical-align: top;
+            width: 30%;
+        }
+        .additional-info-wrap {
+            display: inline-block;
+            margin: 0 2% 0 0;
+            min-width: 190px;
+            position: relative;
+            vertical-align: top;
+            width: 30%;
+        }
+        .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.rsvp_type, .additional-info-wrap label.radio_yes_no, .additional-info-wrap label.radio_veg_yes_no {
+            width: 100% !important;
+        }
+        .checkbox-inline + .checkbox-inline, .rsvp_type + .rsvp_type, .radio_yes_no + .radio_yes_no, .radio_veg_yes_no + .radio_veg_yes_no {
+            margin-left: 0;
+        }
+
+        .additional-info-wrap .additional-info {
+            /*background-color: #266c8e;*/
+            clear: both;
+            color: #fff !important;
+            margin-top: -10px;
+            padding: 0 10px 10px;
+            text-shadow: 1px 1px 2px #000 !important;
+            width: 100%;
+        }
+
+        label.rsvp_type input{
+            border: 1px solid red !important;
+            background-color: red;
+        }
+
+        #guest_guests_row1, #guest_guests_row2, #guest_guests_row3, #guest_guests_row4, #guest_guests_row5 {
+            display: none;
+        }
+
+
+
+        /*
+    Hide the original radios and checkbs
+    (but still accessible)
+
+    :not(#foo) > is a rule filter to block browsers
+                 that don't support that selector from
+                 applying rules they shouldn't
+
+ */
+        /* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904*/
+        .radio_yes_no, .ckb, .radio_veg_yes_no {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+
+        }
+        /* HIDE ORG RADIO & CHECKBOX*/
+        .radio_yes_no > input, .ckb > input, .radio_veg_yes_no > input {
+            visibility: hidden;
+            position: absolute;
+        }
+        /* RADIO & CHECKBOX STYLES */
+        /* DEFAULT <i> STYLE*/
+        .radio_yes_no > i {
+            display: inline-block;
+            vertical-align: middle;
+            width:  24px;
+            height: 25px;
+        }
+        .radio_yes_ > i{
+            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat -25px 0px;
+        }
+        .radio_no_ > i{
+            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat -25px -24px;
+        }
+
+        .radio_veg_yes_no > i {
+            display: inline-block;
+            vertical-align: middle;
+            width:  25px;
+            height: 25px;
+        }
+        .radio_veg_yes_ > i{
+            background: url("rsvp/yes_no_veg_50x51.png") no-repeat -25px 0px;
+        }
+        .radio_veg_no_ > i{
+            background: url("rsvp/yes_no_veg_50x51.png") no-repeat -25px -25px;
+        }
+        .radio_veg_yes_ > input:checked + i{
+            background: url("rsvp/yes_no_veg_50x51.png") no-repeat 0px 0px;
+        }
+        .radio_veg_no_ > input:checked + i{
+            background: url("rsvp/yes_no_veg_50x51.png") no-repeat 0px -25px;
+        }
+        /* HOVER <i> STYLE
+        .radio_yes_no:hover > i{
+            box-shadow: inset 0 0 0 3px #fff;
+            background: gray;
+        }*/
+        .radio_yes_ > input:checked + i{
+            box-shadow: inset 0 0 0 3px #fff;
+            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat 0px 0px;
+        }
+        .radio_no_ > input:checked + i{
+            box-shadow: inset 0 0 0 3px #fff;
+            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat 0px -24px;
+        }
+        /* CHECKBOX */
+        .ckb{
+            font-weight: normal;
+            text-align: center;
+        }
+        .ckb.checked{
+            font-weight: bold;
+        }
+
+        .ckb > input:checked {
+            font-weight: bold !important;
+        }
+
+        .ckb > i{
+            display: inline-block;
+            vertical-align: middle;
+            width:  16px;
+            border-radius: 50%;
+            transition: 0.2s;
+            box-shadow: inset 0 0 0 1px #bf504d;
+            border: 1px solid #bf504d;
+            background: #fff;
+            margin-left: 10px;
+        }
+        .ckb > i {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        .ckb > input:checked + i {
+            box-shadow: inset 0 0 0 1px #008000;
+            border: 1px solid #008000;
+        }
+        .ckb > input + i:after{
+            content: "";
+            display: block;
+            height: 12px;
+            width:  12px;
+            margin: 3px;
+            border-radius: inherit;
+            transition: inherit;
+            background: #fff;
+        }
+        /* (RADIO CHECKED) <i> STYLE */
+        .ckb > input:checked + i:after{
+            margin: 3px;
+            background:  #008000;
+        }
+        .form-group > div {
+            text-align: center;
+        }
+
+        #guest_guests {
+            font-size: 16px;
+            color: #999;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn-value {
+            margin-left: 10px;
+        }
+        .info-left {
+            float: left;
+            width: auto;
+            min-height: 50px;
+            margin-right: 10px;
+        }
+        .info-right {
+            min-height: 50px;
+        }
+        input, select, textarea {
+            -webkit-box-shadow:inset 0 0 11px -5px #3c3c3c;
+            box-shadow:inset 0 0 11px -5px #3c3c3c;
+        }
+        #btn-submit {
+            height: 45px !important;
+        }
+        .alert {
+            padding:15px !important;
+            margin-bottom:20px !important;
+            border:1px solid transparent;
+            border-radius:4px
+        }
+        .pl-lang {
+            font-family: Verdana, Tahoma, Geneva, sans-serif;
+            font-size: 0.9em;
+        }
+		.lang-menu-div {
+            overflow: hidden;
+        }
+        .lang-menu-div-pl {
+            float: left;
+            width: 27px;
+            margin-right: 10px;
+        }
+        .lang-menu-div-en {
+            overflow: hidden;
+        }
+        .lang-pl-flag, .lang-en-flag {
+            display: inline-block;
+            width: 27px;
+            height: 17px;
+        }
+        .lang-pl-flag {
+            background: url("img/en_pl.jpg") no-repeat bottom left;
+            background-position: -27px -17px;
+        }
+        .lang-en-flag {
+            background: url("img/en_pl.jpg") no-repeat bottom left;
+            background-position: 0 -17px;
+        }
+        .lang-link.active i {
+            background-position-y: 0px;
+        }
+        .lang-link.active i, .lang-pl-flag:hover, .lang-en-flag:hover {
+            background-position-y: 0px;
+        }
+    </style>
     <style>
         #map {
             width: 100%;
             height: 500px;
         }
     </style>
-		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDdLg0YJ4E_fVhoZhLgNSrdZt0-KY1kUps&callback=initialize"" async="" defer="defer" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
         // In the following example, markers appear when the user clicks on the map.
         // Each marker is labeled with a single alphabetical character.
@@ -189,10 +602,9 @@
             });
         }
 
-        //google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
-
 </HEAD>
 <BODY class="home page page-id-5 page-parent page-template-default header--sticky nav-scroll-hide header--transparent"
       data-color="#c59d5f" data-smoothscrolling="">
@@ -238,6 +650,9 @@
 							<LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6" id="menu-item-6">
                                 <A href="#post-6-title">Kontakt</A>
                             </LI>
+                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4" id="menu-item-4">
+                                <A href="#post-4-title">Potwierdzenie</A>
+                            </LI>
 							<LI class="menu-item">
                                 <div class="lang-menu-div">
                                     <div class="lang-menu-div-pl"><A class="lang-link active" href="http://olaitomek.webmojo.eu/"><i class="lang-pl-flag"></i></A></div>
@@ -252,7 +667,7 @@
     </DIV>
     <HEADER class="article__header article__header--page full-height" id="post-1-title" style="min-height: inherit !important;">
         <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Home Page" src="assets/images/PropertyManager.jpg">
+            <IMG class="article__parallax__img" alt="Home Page" src="img/oit_2016_front.jpg">
             <svg xmlns="http://www.w3.org/2000/svg" class="blurp--top" id="Layer_1" enable-background="new 0 0 160.7 61.5" viewBox="0 0 160.7 61.5"
 x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
                 <path fill="#ffffff" d="M 80.3 61.5 c 0 0 22.1 -2.7 43.1 -5.4 s 41 -5.4 36.6 -5.4 c -21.7 0 -34.1 -12.7 -44.9 -25.4 S 95.3 0 80.3 0 c -15 0 -24.1 12.7 -34.9 25.4 S 22.3 50.8 0.6 50.8 c -4.3 0 -6.5 0 3.5 1.3 S 36.2 56.1 80.3 61.5 Z"
@@ -287,26 +702,44 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
             <DIV class="container">
                 <SECTION class="page__content  js-post-gallery  cf">
                     <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item one-whole palm-one-whole island">
+                        <DIV class="grid__item six-twelfths palm-one-whole island">
                             <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H4 class="headline__secondary">See How Much You Can make</H4>
-                                <p>How many units do you currently manage?</p>
-                            </HGROUP>
+                                <H2 class="headline__secondary"><SPAN class="first-letter">O</SPAN> nas</H2>
+                                <H1 class="headline__primary">Ola i Tomek</H1></HGROUP>
+                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--color">
+                                ✻
+                            </DIV>
+                            <P class="pl-lang" style="text-align: center;">
+                                Spotkaliśmy się 7 lat temu w małym miasteczku na końcu świata, zwanym Dublinem. Troszkę przy pomocy muzyki, przyjaciół i odrobiny alkoholu, odkryliśmy siebie.
+                                <br />Nasza wspólna przygoda trwa nadal, a każdy dzień jest inny i szczególny, trochę szalony i wariacki, czasami poważny i "dorosły".
+                            </p>
+                            <P class="pl-lang" style="text-align: center;">
+                                Chcemy uczcić tych kilka wspaniałych lat spędzonych razem, pochwalić i podzielić się naszym szczęściem, więc zapraszamy Was na małą zabawę z super jedzeniem w uroczej scenerii.
+                            </p>
+                            <P style="text-align: center;">
+                                &nbsp;
+                            </P>
                         </DIV>
-                        <DIV class="grid__item one-whole palm-one-whole">
-                            <div id="calculation">
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="units">Number Of Units:</label>
-                                        <input type="number" class="form-control" id="units" placeholder="Number Of Units" min="1" />
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Calculate</button>
-                                </form>
-                                <p class="result">
-                                    You could make up to <b>$ per week</b>!
-                                    <a class="btn btn-primary" href="">Apply now</a>
-                                </p>
-                            </div>
+                        <DIV class="grid__item six-twelfths palm-one-whole">
+                            <P style="text-align: center;">
+                                <A href="img/ola_i_tomek_1.jpg">
+                                    <IMG width="1080" height="810" class="alignnone size-large wp-image-442" alt="vertical-photo-1" src="img/ola_i_tomek_1m.jpg">
+                                </A>
+                            </P>
+                        </DIV>
+                        <DIV class="grid__item three-twelfths palm-one-whole ">
+                            <P style="text-align: center;">
+                                <A href="img/ola_i_tomek_682x1024_ola.jpg">
+                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_ola.jpg" />
+                                </A>
+                            </P>
+                        </DIV>
+                        <DIV class="grid__item three-twelfths palm-one-whole ">
+                            <P style="text-align: center;">
+                                <A href="img/ola_i_tomek_682x1024_dog.jpg">
+                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_dog.jpg" />
+                                </A>
+                            </P>
                         </DIV>
                     </DIV>
                 </SECTION>
@@ -575,7 +1008,7 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
             </DIV>
         </SECTION>
     </ARTICLE>
-    <!--HEADER class="article__header article__header--page two-thirds-height" id="post-4-title" data-type="image">
+    <HEADER class="article__header article__header--page two-thirds-height" id="post-4-title" data-type="image">
         <DIV class="article__parallax">
         <IMG class="article__parallax__img" alt="Discover Menu" src="img/three-col-rsvp.jpg"></DIV>
         <DIV class="flexbox">
@@ -585,7 +1018,144 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
                     <H1 class="headline__primary">Potwierdzenie</H1></HGROUP>
             </DIV>
         </DIV>
-    </HEADER-->
+    </HEADER>
+    <ARTICLE class="article--page article--main article--subpage border-simple post-4 page type-page status-publish has-post-thumbnail hentry" id="post-4">
+        <SECTION class="article__content">
+            <DIV class="container">
+                <SECTION class="page__content  js-post-gallery  cf">
+                    <DIV class="pixcode  pixcode--grid  grid  ">
+                        <DIV class="grid__item palm-one-whole island">
+                            <HGROUP class="pixcode  pixcode--heading article__headline">
+                                <H2 class="headline__secondary"><SPAN class="first-letter">R</SPAN>SVP</H2>
+                                <H1 class="headline__primary">Potwierdzenie</H1></HGROUP>
+                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
+                                ✻
+                            </DIV>
+                            <!-- RSVP FORM START -->
+                            <div class="signin-form">
+                                <div class="container" id="container">
+                                    <form class="form-signin" method="post" id="rsvp-form">
+                                        <div id="error">
+                                            <!-- error will be shown here ! -->
+                                        </div>
+                                        <div id="form-new">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name0" id="guest_name0"/>
+                                                <span id="check-guest_name0"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Adres email" name="guest_email" id="guest_email"/>
+                                                <span id="check-e"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Telefon" name="guest_phone" id="guest_phone" maxlength="17"/>
+                                                <span id="check-guest_phone"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12 columns">
+                                                    <label for="radio_yes" class="radio-inline radio_yes_no radio_yes_ checked"><input type="radio" id="radio_yes" name="guest_attend" value="1" checked/><i></i> <span>Przyjadę</span></label>
+                                                    <label for="radio_no" class="radio-inline radio_yes_no radio_no_"><input type="radio" id="radio_no" name="guest_attend" value="0" /><i></i> <span>Nie przyjadę</span></label>
+                                                </div>
+                                            </div>
+                                            <div id="form_new_no">
+                                                <div class="form-group">
+                                                    <div class="col-md-12 columns">
+                                                        <label for="guest_veg0_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg0_no" name="guest_veg0" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                        <label for="guest_veg0_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg0_yes" name="guest_veg0" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select name="guest_guests" id="guest_guests" class="form-control" data-show-icon="true" placeholder="Dodatkowi goście" data-content="<i class='glyphicon glyphicon-cutlery'></i>">
+                                                        <option id="select-placeholder" value="-1" disabled selected>Dodatkowi goście</option>
+                                                        <option value="0">Tylko Ja</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div id="guest_guests_row1">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name1" id="guest_name1"/>
+                                                        <span id="check-guest_name1"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 columns">
+                                                            <label for="guest_veg1_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg1_no" name="guest_veg1" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                            <label for="guest_veg1_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg1_yes" name="guest_veg1" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="guest_guests_row2">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name2" id="guest_name2"/>
+                                                        <span id="check-guest_name2"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 columns">
+                                                            <label for="guest_veg2_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg2_no" name="guest_veg2" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                            <label for="guest_veg2_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg2_yes" name="guest_veg2" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="guest_guests_row3">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name3" id="guest_name3"/>
+                                                        <span id="check-guest_name3"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 columns">
+                                                            <label for="guest_veg3_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg3_no" name="guest_veg3" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                            <label for="guest_veg3_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg3_yes" name="guest_veg3" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="guest_guests_row4">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name4" id="guest_name4"/>
+                                                        <span id="check-guest_name4"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 columns">
+                                                            <label for="guest_veg4_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg4_no" name="guest_veg4" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                            <label for="guest_veg4_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg4_yes" name="guest_veg4" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="guest_guests_row5">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name5" id="guest_name5"/>
+                                                        <span id="check-guest_name5"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 columns">
+                                                            <label for="guest_veg5_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg5_no" name="guest_veg5" value="0" checked /><i></i> <span>Jem mięso</span></label>
+                                                            <label for="guest_veg5_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg5_yes" name="guest_veg5" value="1" /><i></i> <span>Nie jem mięsa</span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="guest_comment" rows="3" cols="28" id="guest_comment" placeholder="Wiadomość dla Oli i Tomka"></textarea>
+                                            </div>
+                                            <hr/>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-default" name="btn-save" id="btn-submit">
+                                                <span class="glyphicon glyphicon-send"></span><span class="btn-value">Wyślij</span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- RSVP FORM END -->
+                        </DIV>
+					</DIV>
+                </SECTION>
+            </DIV>
+        </SECTION>
+    </ARTICLE>
 
     <FOOTER class="site-footer ">
         <DIV class="copyright-area copyright-area__dark">
@@ -599,7 +1169,6 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
     </FOOTER>
     <DIV class="covers"></DIV>
 </DIV>
-
 <SCRIPT src="js/plugins.js" type="text/javascript"></SCRIPT>
 
 <SCRIPT type="text/javascript">
@@ -620,7 +1189,7 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
 </SCRIPT>
 
 <!-- custom script - start -->
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="rsvp/bootstrap/js/bootstrap.min.js"></script>
 <!-- custom script - end -->
 
 </BODY>
