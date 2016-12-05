@@ -1,1196 +1,652 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--[if lt IE 7]>
-<html class="lt-ie9 lt-ie8 lt-ie7" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
-<![endif]-->
-<!--[if IE 7]>
-<html class="lt-ie9 lt-ie8" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
-<![endif]-->
-<!--[if IE 8]>
-<html class="lt-ie9" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
-<![endif]-->
-<!--[if IE 9]>
-<html class="ie9" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
-<![endif]-->
-<!--[if gt IE 9]>
-<!-->
-<HTML lang="en-US" itemtype="http://schema.org/WebPage" itemscope="" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
-<HEAD>
-    <META content="IE=11.0000" http-equiv="X-UA-Compatible">
-    <!--[if IE]><![endif]-->
-    <LINK href="//ajax.googleapis.com" rel="dns-prefetch">
-    <LINK href="//fonts.googleapis.com" rel="dns-prefetch">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <META http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <META name="HandheldFriendly" content="True">
-    <META name="apple-touch-fullscreen" content="yes">
-    <META name="MobileOptimized" content="320">
-    <META name="viewport" content="width=device-width, initial-scale=1">
-    <TITLE>Ola i Tomek</TITLE>
-    <LINK href="http://gmpg.org/xfn/11" rel="profile">
-    <!--[if IE]-->
-    <SCRIPT type="text/javascript">
-        if (/*@cc_on!@*/false)
-            var isIe = 1;
-    </SCRIPT>
-    <!--[endif]-->
-    <META name="description" content="Ola i Tomek">
-    <META name="robots" content="noodp">
-    <META content="en_US" property="og:locale">
-    <META content="website" property="og:type">
-    <META content="Ola i Tomek" property="og:title">
-    <META content="Ola i Tomek" property="og:description">
-    <META content="Ola i Tomek" property="og:site_name">
-    <META content="img/oit_2016_front.jpg" property="og:image">
-    <SCRIPT type="application/ld+json">
-        {"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/olaitomek.webmojo.eu\/","name":"Ola i Tomek","potentialAction":{"@type":"SearchAction","target":"http:\/\//olaitomek.webmojo.eu\/?s={search_term_string}","query-input":"required name=search_term_string"}}
-    </SCRIPT>
-
-    <LINK id="wpgrade-main-style-css" href="css/style.css" rel="stylesheet" type="text/css" media="all">
-
-    <!-- custom script - start -->
-    <link href="rsvp/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all">
-    <link href="rsvp/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="all">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="rsvp/jquery-1.11.3-jquery.min.js"></script>
-
-
-
-    <script src="rsvp/validation.min.js"></script>
-    <link href="rsvp/style.css" rel="stylesheet" type="text/css" media="all">
-    <script src="rsvp/script.js"></script>
-    <!-- custom script - end -->
-
-    <SCRIPT src="js/modernizr.min.js" type="text/javascript"></SCRIPT>
-
-    <LINK href="http://olaitomek.webmojo.eu/" rel="shortlink">
-
-    <SCRIPT type="text/javascript">
-        /* !!! Preety heading fonts red/grey !!! */
-        if (typeof WebFont !== 'undefined') {
-            WebFont.load({
-                google: {families: ['Source Sans Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic:latin-ext', 'Herr Von Muellerhoff:regular:latin-ext', 'Cabin:regular:latin', 'Cabin:regular,italic,500,500italic,600,600italic,700,700italic:latin']},
-                classes: false,
-                events: false
-            });
-        } else {
-            var tk = document.createElement('script');
-            tk.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            tk.type = 'text/javascript';
-
-            tk.onload = tk.onreadystatechange = function () {
-                WebFont.load({
-                    google: {families: ['Source Sans Pro:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,900,900italic:latin-ext', 'Herr Von Muellerhoff:regular:latin-ext', 'Cabin:regular:latin', 'Cabin:regular,italic,500,500italic,600,600italic,700,700italic:latin']},
-                    classes: false,
-                    events: false
-                });
-            };
-
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(tk, s);
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        html, body, #heroimage{
+            width:100%;
+            height:100%;
         }
-    </SCRIPT>
 
+        #heroimage{
+            background: url('assets/images/property_manager_hero.jpg') no-repeat center bottom;
+            background-size: cover;
+        }
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+        .container-offset {
+            padding: 60px 0;
+        }
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        .item span {
+            font-style: normal;
+        }
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius:0 !important;
+            transition: box-shadow 0.5s;
+        }
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        .panel-footer {
+            background-color: white !important;
+        }
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        .hero-unit {
+          background: url("assets/images/property_manager_hero.jpg") no-repeat center top;
+        }
+        #calculator {
+            position: relative;
+            z-index: 20;
+        }
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
 
-    <LINK href="img/favicon_16.png" rel="icon">
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        .blurp--top {
+            transform-origin: 50% 100%;
+            -webkit-transform-origin: 50% 100%;
+            -moz-transform-origin: 50% 100%;
+            -o-transform-origin: 50% 100%;
+        }
+        .blurp--top {
+            left: 50%;
+            top: 100%;
+            margin-top: -50px;
+            margin-left: -96px;
+            position: absolute;
+            z-index: 1;
+        }
+        .down-arrow--bubble {
+            bottom: -16px;
+        }
+        .down-arrow {
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            display: block;
+            position: absolute;
+            z-index: 100;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .down-arrow--bubble .arrow {
+            width: 16px;
+            height: 16px;
+            margin-top: -8px;
+            margin-left: -8px;
+            border-right-color: black;
+            border-bottom-color: black;
+            border-right-width: 2px;
+            border-bottom-width: 2px;
+            border-right-style: solid;
+            border-bottom-style: solid;
+        }
+        .down-arrow .arrow {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            z-index: 20;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+        }
+        .down-arrow--bubble a {
+            display: block;
+            width: 100%;
+            height: 65px;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.35);
+            color: #000;
+        }
+        .shadow {
+            box-shadow: 0 0 8px #000;
+            transition: all 200ms;
+        }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-    <META name="description" content="Ola i Tomek">
-    <LINK href="http://olaitomek.webmojo.eu/" rel="canonical">
-    <META content="Ola i Tomek" property="og:site_name">
-    <META content="http://olaitomek.webmojo.eu/" property="og:url">
-    <META content="Ola i Tomek" property="og:title">
-    <META content="article" property="og:type">
-    <META content="" property="og:description">
-    <META content="" property="article:section">
-    <META content="http://olaitomek.webmojo.eu/img/oit_2016_front.jpg" property="og:image">
-    <META content="Home Page" itemprop="name">
-    <META content="" itemprop="description">
-    <META content="http://olaitomek.webmojo.eu/img/oit_2016_front.jpg" itemprop="image">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#calculator">CALCULATOR</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-    <SCRIPT type="text/javascript">;(function ($) {})(jQuery);</SCRIPT>
+<div id="heroimage">
+    <svg xmlns="http://www.w3.org/2000/svg" class="blurp--top" id="Layer_1" enable-background="new 0 0 160.7 61.5" viewBox="0 0 160.7 61.5" x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
+        <path fill="#ffffff" d="M 80.3 61.5 c 0 0 22.1 -2.7 43.1 -5.4 s 41 -5.4 36.6 -5.4 c -21.7 0 -34.1 -12.7 -44.9 -25.4 S 95.3 0 80.3 0 c -15 0 -24.1 12.7 -34.9 25.4 S 22.3 50.8 0.6 50.8 c -4.3 0 -6.5 0 3.5 1.3 S 36.2 56.1 80.3 61.5 Z"></path>
+    </svg>
+    <div class="down-arrow down-arrow--bubble"><a href="#calculator"><div class="arrow"></div></a></div>
+    <div class="overlay"></div>
+</div>
 
-    <LINK id="customify_output_style" href="css/head_styles.css" rel="stylesheet" type="text/css" media="all">
+<!-- Container (Calculator Section) -->
+<section id="calculator" class="jumbotron text-center">
+    <div class="container container-offset">
+        <div class="row">
+            <h1>Company</h1>
+            <p>We specialize in blablabla</p>
+            <form>
+                <div class="input-group">
+                    <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger">Subscribe</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
-    <META name="GENERATOR" content="MSHTML 11.00.9600.18125">
-    <script type="text/javascript">
+<!-- Container (About Section) -->
+<section id="about">
+    <div class="container container-offset">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>About Company Page</h2><br>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <br><button class="btn btn-default btn-lg">Get in Touch</button>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-signal logo"></span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        $(document).ready(function() {
-            //When checkboxes/radios checked/unchecked, toggle background color
-            $('.form-group').on('click','input[type=radio]',function() {
-                $(this).closest('.form-group').find('.radio-inline, .radio').removeClass('checked');
-                $(this).closest('.radio-inline, .radio').addClass('checked');
-            });
-            $('.form-group').on('click','input[type=checkbox]',function() {
-                $(this).closest('.checkbox-inline, .checkbox').toggleClass('checked');
-            });
+<section class="bg-grey">
+    <div class="container container-offset">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            </div>
+            <div class="col-sm-8">
+                <h2>Our Values</h2><br>
+                <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+                <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            //Show additional info text box when relevant checkbox checked
-            $('.additional-info-wrap input[type=checkbox]').click(function() {
-                if($(this).is(':checked')) {
-                    $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');
-                }
-                else {
-                    $(this).closest('.additional-info-wrap').find('.additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');
-                }
+<!-- Container (Services Section) -->
+<section id="services" class="text-center">
+    <div class="container container-offset">
+        <h2>SERVICES</h2>
+        <h4>What we offer</h4>
+        <br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-off logo-small"></span>
+                <h4>POWER</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-heart logo-small"></span>
+                <h4>LOVE</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-lock logo-small"></span>
+                <h4>JOB DONE</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-leaf logo-small"></span>
+                <h4>GREEN</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-certificate logo-small"></span>
+                <h4>CERTIFIED</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-wrench logo-small"></span>
+                <h4 style="color:#303030;">HARD WORK</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            });
-            //Show additional info text box when relevant radio checked
-            $('input[type=radio]').click(function() {
-                $(this).closest('.form-group').find('.additional-info-wrap .additional-info').addClass('hide').find('input,select').val('').attr('disabled','disabled');
-                if($(this).closest('.additional-info-wrap').length > 0) {
-                    $(this).closest('.additional-info-wrap').find('.additional-info').removeClass('hide').find('input,select').removeAttr('disabled');
-                }
-            });
+<!-- Container (Portfolio Section) -->
+<section id="portfolio" class="bg-grey text-center">
+    <div class="container container-offset">
+        <h2>Portfolio</h2><br>
+        <h4>What we have created</h4>
+        <div class="row text-center slideanim">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="paris.jpg" alt="Paris" width="400" height="300">
+                    <p><strong>Paris</strong></p>
+                    <p>Yes, we built Paris</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="newyork.jpg" alt="New York" width="400" height="300">
+                    <p><strong>New York</strong></p>
+                    <p>We built New York</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+                    <p><strong>San Francisco</strong></p>
+                    <p>Yes, San Fran is ours</p>
+                </div>
+            </div>
+        </div><br>
 
-            $('#radio_no, #radio_yes').change(function(){
-                yes_no();
-            });
+        <h2>What our customers say</h2>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-            var existing = false;
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+                </div>
+                <div class="item">
+                    <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+                </div>
+                <div class="item">
+                    <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+                </div>
+            </div>
 
-            $('input[name=rsvp_type]').change(function(){
-                if($(this).val() == 1) {
-                    $('.btn-value').text('Wyślij');
-                    $('#form-new').show();
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
 
-                    existing = false;
+<!-- Container (Pricing Section) -->
+<section id="pricing">
+    <div class="container container-offset">
+        <div class="text-center">
+            <h2>Pricing</h2>
+            <h4>Choose a payment plan that works for you</h4>
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Basic</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>20</strong> Lorem</p>
+                        <p><strong>15</strong> Ipsum</p>
+                        <p><strong>5</strong> Dolor</p>
+                        <p><strong>2</strong> Sit</p>
+                        <p><strong>Endless</strong> Amet</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>$19</h3>
+                        <h4>per month</h4>
+                        <button class="btn btn-lg">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Pro</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>50</strong> Lorem</p>
+                        <p><strong>25</strong> Ipsum</p>
+                        <p><strong>10</strong> Dolor</p>
+                        <p><strong>5</strong> Sit</p>
+                        <p><strong>Endless</strong> Amet</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>$29</h3>
+                        <h4>per month</h4>
+                        <button class="btn btn-lg">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Premium</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>100</strong> Lorem</p>
+                        <p><strong>50</strong> Ipsum</p>
+                        <p><strong>25</strong> Dolor</p>
+                        <p><strong>10</strong> Sit</p>
+                        <p><strong>Endless</strong> Amet</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>$49</h3>
+                        <h4>per month</h4>
+                        <button class="btn btn-lg">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                } else if($(this).val() == 0) {
-                    $("#btn-submit").html('<span class="glyphicon glyphicon-edit"></span> &nbsp; Edytuj');
-                    $('#form-new').hide();
+<!-- Container (Contact Section) -->
+<section id="contact" class="bg-grey">
+    <div class="container container-offset">
+        <h2 class="text-center">CONTACT</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact us and we'll get back to you within 24 hours.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+            </div>
+            <div class="col-sm-7 slideanim">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    existing = false;
-                }
-            });
+<section>
+    <div id="googleMap" style="height:400px;width:100%;"></div>
+</section>
 
-            $("#guest_phone").keydown(function (e) {
-                // Allow: backspace, delete, tab, escape, enter and .
-                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-                        // Allow: Ctrl+A
-                    (e.keyCode == 65 && e.ctrlKey === true) ||
-                        // Allow: Ctrl+C
-                    (e.keyCode == 67 && e.ctrlKey === true) ||
-                        // Allow: Ctrl+X
-                    (e.keyCode == 88 && e.ctrlKey === true) ||
-                        // Allow: home, end, left, right
-                    (e.keyCode >= 35 && e.keyCode <= 39)) {
-                    // let it happen, don't do anything
-                    return;
-                }
-                // Ensure that it is a number and stop the keypress
-                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-                    e.preventDefault();
-                }
-            });
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdLg0YJ4E_fVhoZhLgNSrdZt0-KY1kUps&callback=initialize" async="" defer="defer" type="text/javascript"></script>
+<script>
+    function initialize() {
+        var myCenter = new google.maps.LatLng(53.2050574, -6.1061194);
+        var mapProp = {
+            center:myCenter,
+            zoom:12,
+            scrollwheel: true,
+            draggable: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
 
-            $("#guest_guests").change(function () {
-                console.log("Number of guests: " + $('#guest_guests').val());
-                guestchanged();
-            });
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-            $(".alpha-only").on("keydown", function(event){
-                // Ignore controls such as backspace
-                var arr = [8,9,16,17,20,32,35,36,37,38,39,40,45,46];
-
-                // Allow letters
-                for(var i = 65; i <= 90; i++){
-                    arr.push(i);
-                }
-
-                if(jQuery.inArray(event.which, arr) === -1){
-                    event.preventDefault();
-                }
-            });
-
-            $(".alpha-only").on("input", function(){
-                var regexp = /([^a-zA-Z'] )+([A-Za-z']+)*$/g;
-                if($(this).val().match(regexp)){
-                    $(this).val( $(this).val().replace(regexp,'') );
-                }
-            });
-
-            $(".form-group input").on('blur', function(){
-                if($(this).next('label.error').length > 0) {
-                    $(this).css('border', '1px solid #bf504d');
-                }
-            });
-
+        var marker = new google.maps.Marker({
+            position:myCenter,
         });
 
-        function yes_no(){
-            var yes = $('#radio_yes');
-            var no = $('#radio_no');
-            var val = parseInt($("#guest_guests").val(), 10);
-            var i;
-            if(no.is(':checked')){
-                $('#form_new_no').hide();
-                $("#guest_guests").val(-1);
-                for (i=1; i <= val ;i++) {
-                    $("#guest_guests_row"+i).hide();
+        marker.setMap(map);
+    }
+    //google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage'], #heroimage a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
                 }
-                $(".radio_yes_ span").text("Przyjadę");
-                $(".radio_no_ span").text("Nie przyjadę");
-                $("#guest_guests").css('color','#999');
-            }
-            if(yes.is(':checked')){
-                $('#form_new_no').show();
-            }
-            console.log("Yes / No: " + $('input[name=radio_yes_no]:checked', '#rsvp-form').val());
-        }
-
-        function guestchanged() {
-            /* Hide and show fields depending on guest number */
-
-            var val = parseInt($("#guest_guests").val(), 10);
-            var i;
-
-            if($("#guest_guests").value != -1){
-                $("#guest_guests").css('color','#555');
-            }
-
-            for (i=val+1;i<=5;i++) {
-                $("#guest_guests_row"+i).hide();
-            }
-            for (i=1;i<=val;i++) {
-                $("#guest_guests_row"+i).show();
-            }
-            if (val === 0) {
-                $(".radio_yes_ span").text("Przyjadę");
-                $(".radio_no_ span").text("Nie przyjadę");
-            } else {
-                $(".radio_yes_ span").text("Przyjedziemy");
-                $(".radio_no_ span").text("Nie przyjedziemy");
-            }
-
-        }
-
-        function pageload() {
-            guestchanged();
-        }
-
-
-
-    </script>
-
-    <style type="text/css">
-        label.rsvp_type, label.radio_yes_no, label.radio_veg_yes_no, label.checkbox-inline, label.radio, label.checkbox {
-            cursor: pointer;
-            font-weight: 400;
-            margin-bottom: 10px !important;
-            margin-right: 2%;
-            margin-left:0;
-            padding: 10px 10px 10px 30px;
-        }
-        label.rsvp_type.checked,
-        label.radio_yes_no.checked,
-        label.radio_veg_yes_no.checked {
-            color: #bf504d !important;
-            font-weight: bold;
-        }
-        .columns label.rsvp_type,
-        .columns label.radio_yes_no,
-        .columns label.radio_veg_yes_no {
-            min-width: 190px;
-            vertical-align: top;
-            width: 30%;
-        }
-        .additional-info-wrap {
-            display: inline-block;
-            margin: 0 2% 0 0;
-            min-width: 190px;
-            position: relative;
-            vertical-align: top;
-            width: 30%;
-        }
-        .additional-info-wrap label.checkbox-inline, .additional-info-wrap label.rsvp_type, .additional-info-wrap label.radio_yes_no, .additional-info-wrap label.radio_veg_yes_no {
-            width: 100% !important;
-        }
-        .checkbox-inline + .checkbox-inline, .rsvp_type + .rsvp_type, .radio_yes_no + .radio_yes_no, .radio_veg_yes_no + .radio_veg_yes_no {
-            margin-left: 0;
-        }
-
-        .additional-info-wrap .additional-info {
-            /*background-color: #266c8e;*/
-            clear: both;
-            color: #fff !important;
-            margin-top: -10px;
-            padding: 0 10px 10px;
-            text-shadow: 1px 1px 2px #000 !important;
-            width: 100%;
-        }
-
-        label.rsvp_type input{
-            border: 1px solid red !important;
-            background-color: red;
-        }
-
-        #guest_guests_row1, #guest_guests_row2, #guest_guests_row3, #guest_guests_row4, #guest_guests_row5 {
-            display: none;
-        }
-
-
-
-        /*
-    Hide the original radios and checkbs
-    (but still accessible)
-
-    :not(#foo) > is a rule filter to block browsers
-                 that don't support that selector from
-                 applying rules they shouldn't
-
- */
-        /* CUSTOM RADIO & CHECKBOXES http://stackoverflow.com/a/17541916/383904*/
-        .radio_yes_no, .ckb, .radio_veg_yes_no {
-            cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-
-        }
-        /* HIDE ORG RADIO & CHECKBOX*/
-        .radio_yes_no > input, .ckb > input, .radio_veg_yes_no > input {
-            visibility: hidden;
-            position: absolute;
-        }
-        /* RADIO & CHECKBOX STYLES */
-        /* DEFAULT <i> STYLE*/
-        .radio_yes_no > i {
-            display: inline-block;
-            vertical-align: middle;
-            width:  24px;
-            height: 25px;
-        }
-        .radio_yes_ > i{
-            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat -25px 0px;
-        }
-        .radio_no_ > i{
-            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat -25px -24px;
-        }
-
-        .radio_veg_yes_no > i {
-            display: inline-block;
-            vertical-align: middle;
-            width:  25px;
-            height: 25px;
-        }
-        .radio_veg_yes_ > i{
-            background: url("rsvp/yes_no_veg_50x51.png") no-repeat -25px 0px;
-        }
-        .radio_veg_no_ > i{
-            background: url("rsvp/yes_no_veg_50x51.png") no-repeat -25px -25px;
-        }
-        .radio_veg_yes_ > input:checked + i{
-            background: url("rsvp/yes_no_veg_50x51.png") no-repeat 0px 0px;
-        }
-        .radio_veg_no_ > input:checked + i{
-            background: url("rsvp/yes_no_veg_50x51.png") no-repeat 0px -25px;
-        }
-        /* HOVER <i> STYLE
-        .radio_yes_no:hover > i{
-            box-shadow: inset 0 0 0 3px #fff;
-            background: gray;
-        }*/
-        .radio_yes_ > input:checked + i{
-            box-shadow: inset 0 0 0 3px #fff;
-            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat 0px 0px;
-        }
-        .radio_no_ > input:checked + i{
-            box-shadow: inset 0 0 0 3px #fff;
-            background: url("rsvp/yes_no_hearts_50x48.png") no-repeat 0px -24px;
-        }
-        /* CHECKBOX */
-        .ckb{
-            font-weight: normal;
-            text-align: center;
-        }
-        .ckb.checked{
-            font-weight: bold;
-        }
-
-        .ckb > input:checked {
-            font-weight: bold !important;
-        }
-
-        .ckb > i{
-            display: inline-block;
-            vertical-align: middle;
-            width:  16px;
-            border-radius: 50%;
-            transition: 0.2s;
-            box-shadow: inset 0 0 0 1px #bf504d;
-            border: 1px solid #bf504d;
-            background: #fff;
-            margin-left: 10px;
-        }
-        .ckb > i {
-            width: 20px;
-            height: 20px;
-            border-radius: 3px;
-        }
-        .ckb > input:checked + i {
-            box-shadow: inset 0 0 0 1px #008000;
-            border: 1px solid #008000;
-        }
-        .ckb > input + i:after{
-            content: "";
-            display: block;
-            height: 12px;
-            width:  12px;
-            margin: 3px;
-            border-radius: inherit;
-            transition: inherit;
-            background: #fff;
-        }
-        /* (RADIO CHECKED) <i> STYLE */
-        .ckb > input:checked + i:after{
-            margin: 3px;
-            background:  #008000;
-        }
-        .form-group > div {
-            text-align: center;
-        }
-
-        #guest_guests {
-            font-size: 16px;
-            color: #999;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        .btn-value {
-            margin-left: 10px;
-        }
-        .info-left {
-            float: left;
-            width: auto;
-            min-height: 50px;
-            margin-right: 10px;
-        }
-        .info-right {
-            min-height: 50px;
-        }
-        input, select, textarea {
-            -webkit-box-shadow:inset 0 0 11px -5px #3c3c3c;
-            box-shadow:inset 0 0 11px -5px #3c3c3c;
-        }
-        #btn-submit {
-            height: 45px !important;
-        }
-        .alert {
-            padding:15px !important;
-            margin-bottom:20px !important;
-            border:1px solid transparent;
-            border-radius:4px
-        }
-        .pl-lang {
-            font-family: Verdana, Tahoma, Geneva, sans-serif;
-            font-size: 0.9em;
-        }
-		.lang-menu-div {
-            overflow: hidden;
-        }
-        .lang-menu-div-pl {
-            float: left;
-            width: 27px;
-            margin-right: 10px;
-        }
-        .lang-menu-div-en {
-            overflow: hidden;
-        }
-        .lang-pl-flag, .lang-en-flag {
-            display: inline-block;
-            width: 27px;
-            height: 17px;
-        }
-        .lang-pl-flag {
-            background: url("img/en_pl.jpg") no-repeat bottom left;
-            background-position: -27px -17px;
-        }
-        .lang-en-flag {
-            background: url("img/en_pl.jpg") no-repeat bottom left;
-            background-position: 0 -17px;
-        }
-        .lang-link.active i {
-            background-position-y: 0px;
-        }
-        .lang-link.active i, .lang-pl-flag:hover, .lang-en-flag:hover {
-            background-position-y: 0px;
-        }
-    </style>
-    <style>
-        #map {
-            width: 100%;
-            height: 500px;
-        }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        // In the following example, markers appear when the user clicks on the map.
-        // Each marker is labeled with a single alphabetical character.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var labelIndex = 0;
-        function initialize() {
-
-            // Create an array of styles.
-            var styles = [
-                {
-                    stylers: [
-                        {saturation: -100},
-                        {gamma: 3},
-                        {visibility: "simplified"}
-                    ]
-                },
-                {
-                    featureType: "road",
-                    stylers: [
-                        {hue: "#ffaa00"},
-                        {saturation: 48},
-                        {gamma: .4},
-                        {visibility: "on"}
-                    ]
-                },
-                {
-                    featureType: "administrative",
-                    stylers: [
-                        {visibility: "on"}
-                    ]
-                }
-            ];
-
-            // Create a new StyledMapType object, passing it the array of styles,
-            // as well as the name to be displayed on the map type control.
-            var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
-
-            var mapCanvas = document.getElementById('map');
-            var mapOptions = {
-                zoom: 12,
-                center: new google.maps.LatLng(54.251500,18.845562),
-                mapTypeControlOptions: {
-                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-                },
-                zoomControlOptions: {
-                    style: google.maps.ZoomControlStyle.LARGE,
-                    position: google.maps.ControlPosition.LEFT_CENTER
-                }
-            };
-            var map = new google.maps.Map(mapCanvas, mapOptions)
-
-            //Associate the styled map with the MapTypeId and set it to display.
-            map.mapTypes.set('map_style', styledMap);
-            map.setMapTypeId('map_style');
-
-            google.maps.event.addListener(map, 'click', function(event) {
-                addMarker(event.latLng, map);
             });
+        });
 
-            // Add a marker at the center of the map.
-            addMarker(mapOptions.center, map);
-        }
+        $(window).scroll(function() {
+            if($(window).scrollTop()==$("#calculator").offset().top){
+                setTimeout(
+                        $(".navbar").addClass("shadow"), 400);
+            }
+        });
+    })
+</script>
 
-        // Adds a marker to the map.
-        function addMarker(location, map) {
-            // Add the marker at the clicked location, and add the next-available label
-            // from the array of alphabetical characters.
-            var image = 'img/map-pin-heart.png';
-            var label = 'Cedrowy Dworek';
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                icon: image,
-                title: label
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-</HEAD>
-<BODY class="home page page-id-5 page-parent page-template-default header--sticky nav-scroll-hide header--transparent"
-      data-color="#c59d5f" data-smoothscrolling="">
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
-    to improve your experience.</p>
-<![endif]-->
-<DIV class="page" id="page">
-    <DIV class="site-header  header--inversed  js-header">
-        <DIV class="container">
-            <DIV class="flexbox">
-                <DIV class="flexbox__item">
-                    <A class="js-nav-trigger  nav-trigger" href="#">
-                        <I class="icon-reorder"></I>
-                    </A>
-                </DIV>
-                <DIV class="flexbox__item  branding-container">
-                    <DIV class="site-header__branding">
-                        <H1 class="site-title site-title--image">
-                            <A title="Ola i Tomek" class="site-logo  site-logo--image  site-logo--image-2x" href="http://www.olaitomek.webmojo.eu" rel="home">
-                                <IMG class="site-logo-img--light" alt="Ola i Tomek" src="img/logo-oit-white.png" rel="logo" data-logo2x="img/logo-oit-white.png">
-                                <IMG class="site-logo-img--dark" alt="Ola i Tomek" src="img/logo-oit1.png" rel="logo" data-logo2x="img/logo-oit1.png">
-                            </A>
-                        </H1>
-                    </DIV>
-                </DIV>
-                <DIV class="flexbox__item">
-                    <NAV class="navigation  navigation--main" id="js-navigation--main">
-                        <H2 class="accessibility">Primary Navigation</H2>
-                        <UL class="nav  nav--main  nav--items-menu" id="menu-main-menu-2">
-                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1 current-menu-item current_page_item" id="menu-item-1">
-                                <A href="#post-1-title">Start</A>
-                            </LI>
-                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5" id="menu-item-5">
-                                <A href="#post-5-title">Jedzenie i Spanie</A>
-                            </LI>
-                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2" id="menu-item-2">
-                                <A href="#post-2-title">Kwiaty I Prezenty</A>
-                            </LI>
-                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3" id="menu-item-3">
-                                <A href="#post-3-title">Gdzie i Kiedy</A>
-                            </LI>
-							<LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6" id="menu-item-6">
-                                <A href="#post-6-title">Kontakt</A>
-                            </LI>
-                            <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4" id="menu-item-4">
-                                <A href="#post-4-title">Potwierdzenie</A>
-                            </LI>
-							<LI class="menu-item">
-                                <div class="lang-menu-div">
-                                    <div class="lang-menu-div-pl"><A class="lang-link active" href="http://olaitomek.webmojo.eu/"><i class="lang-pl-flag"></i></A></div>
-                                    <div class="lang-menu-div-en"><A class="lang-link" href="http://olaitomek.webmojo.eu/en/"><i class="lang-en-flag"></i></A></div>
-                                </div>
-                            </LI>
-                        </UL>
-                    </NAV>
-                </DIV>
-            </DIV>
-        </DIV>
-    </DIV>
-    <HEADER class="article__header article__header--page full-height" id="post-1-title" style="min-height: inherit !important;">
-        <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Home Page" src="img/Property_Manager.jpg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="blurp--top" id="Layer_1" enable-background="new 0 0 160.7 61.5" viewBox="0 0 160.7 61.5"
-x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
-                <path fill="#ffffff" d="M 80.3 61.5 c 0 0 22.1 -2.7 43.1 -5.4 s 41 -5.4 36.6 -5.4 c -21.7 0 -34.1 -12.7 -44.9 -25.4 S 95.3 0 80.3 0 c -15 0 -24.1 12.7 -34.9 25.4 S 22.3 50.8 0.6 50.8 c -4.3 0 -6.5 0 3.5 1.3 S 36.2 56.1 80.3 61.5 Z"
-/></svg>
-            <DIV class="down-arrow down-arrow--bubble">
-                <DIV class="arrow"></DIV>
-            </DIV>
-            <div class="overlay"></div>
-        </DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">W</SPAN>elcome</H2>
-                    <H1 class="headline__primary">Ola i Tomek</H1>
-                    <DIV class="headline__description">
-                        <DIV class="pixcode  pixcode--separator  separator separator--line-flower separator_color--light">
-                            <DIV class="line  line--left"></DIV>
-                            <DIV class="line  line--right"></DIV>
-                            <DIV class="star">✻</DIV>
-                            <DIV class="arrows">
-                                <DIV class="arrow arrow--left"></DIV>
-                                <DIV class="arrow arrow--right"></DIV>
-                            </DIV>
-                        </DIV>
-                    </DIV>
-                </HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--arrow border-simple post-1 page type-page status-publish has-post-thumbnail hentry" id="post-1">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item six-twelfths palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">O</SPAN> nas</H2>
-                                <H1 class="headline__primary">Ola i Tomek</H1></HGROUP>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--color">
-                                ✻
-                            </DIV>
-                            <P class="pl-lang" style="text-align: center;">
-                                Spotkaliśmy się 7 lat temu w małym miasteczku na końcu świata, zwanym Dublinem. Troszkę przy pomocy muzyki, przyjaciół i odrobiny alkoholu, odkryliśmy siebie.
-                                <br />Nasza wspólna przygoda trwa nadal, a każdy dzień jest inny i szczególny, trochę szalony i wariacki, czasami poważny i "dorosły".
-                            </p>
-                            <P class="pl-lang" style="text-align: center;">
-                                Chcemy uczcić tych kilka wspaniałych lat spędzonych razem, pochwalić i podzielić się naszym szczęściem, więc zapraszamy Was na małą zabawę z super jedzeniem w uroczej scenerii.
-                            </p>
-                            <P style="text-align: center;">
-                                &nbsp;
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item six-twelfths palm-one-whole">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_1.jpg">
-                                    <IMG width="1080" height="810" class="alignnone size-large wp-image-442" alt="vertical-photo-1" src="img/ola_i_tomek_1m.jpg">
-                                </A>
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item three-twelfths palm-one-whole ">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_682x1024_ola.jpg">
-                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_ola.jpg" />
-                                </A>
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item three-twelfths palm-one-whole ">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_682x1024_dog.jpg">
-                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_dog.jpg" />
-                                </A>
-                            </P>
-                        </DIV>
-                    </DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-    <HEADER class="article__header article__header--page two-thirds-height" id="post-5-title" data-type="image">
-        <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Discover Menu" src="img/food-bed.jpg">
-
-        </DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">J</SPAN>edzenie i <SPAN class="first-letter">S</SPAN>panie</H2>
-                    <H1 class="headline__primary">Jedzenie i spanie</H1>
-                </HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--subpage border-simple post-5 page type-page status-publish has-post-thumbnail hentry" id="post-5">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item six-twelfths palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">J</SPAN>edzenie i <SPAN class="first-letter">S</SPAN>panie</H2>
-                                <H1 class="headline__primary">Jedzenie i&nbsp;spanie</H1>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
-                                ✻
-                            </DIV>
-                            <P style="text-align: center;">
-                                Na wszystkich gości czeka pokój oraz śniadanie, więc prosimy przybywajcie.
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item six-twelfths palm-one-whole ">
-                            <STYLE type="text/css">
-                                #gallery-0 {
-                                    margin: auto;
-                                }
-                                #gallery-0 .gallery-item {
-                                    float: left;
-                                    text-align: center;
-                                    width: 50%;
-                                }
-                                /* see gallery_shortcode() in wp-includes/media.php */
-                            </STYLE>
-                            <DIV class="gallery galleryid-15 gallery-columns-2 gallery-size-medium" id="gallery-0">
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/food1.jpg" data-alt="" data-title="food1">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="food1" src="img/food1.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/bed1.jpg" data-alt="" data-title="bed1">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="bed1" src="img/bed1.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/bed2.jpg" data-alt="" data-title="bed2">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="bed2" src="img/bed2.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/food2.jpg" data-alt="" data-title="food2">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="food2" src="img/food2.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                            </DIV>
-                        </DIV>
-                    </DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-    <HEADER class="article__header article__header--page two-thirds-height" id="post-2-title" data-type="image">
-        <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Discover Menu" src="img/gift-flower.jpg">
-        </DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">P</SPAN>rezenty i <SPAN class="first-letter">K</SPAN>wiaty</H2>
-                    <H1 class="headline__primary">Prezenty i Kwiaty</H1>
-                </HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--subpage border-simple post-2 page type-page status-publish has-post-thumbnail hentry" id="post-2">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item six-twelfths palm-one-whole ">
-                            <STYLE type="text/css">
-                                #gallery-0 {
-                                    margin: auto;
-                                }
-                                #gallery-0 .gallery-item {
-                                    float: left;
-                                    text-align: center;
-                                    width: 50%;
-                                }
-                                /* see gallery_shortcode() in wp-includes/media.php */
-                            </STYLE>
-                            <DIV class="gallery galleryid-15 gallery-columns-2 gallery-size-medium" id="gallery-0">
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/gift1.jpg" data-alt="" data-title="gift1">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="Prezent" src="img/gift1.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/flower1.jpg" data-alt="" data-title="Kwiaty">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="Kwiaty" src="img/flower1.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/flower2.jpg" data-alt="" data-title="Kwiaty">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="Kwiaty" src="img/flower2.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                                <FIGURE class="gallery-item">
-                                    <DIV class="gallery-icon landscape">
-                                        <A href="img/gift2.jpg" data-alt="" data-title="gift1">
-                                            <IMG width="300" height="218" class="attachment-medium" alt="Prezent" src="img/gift2.jpg">
-                                        </A>
-                                    </DIV>
-                                </FIGURE>
-                            </DIV>
-                        </DIV>
-                        <DIV class="grid__item six-twelfths palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">P</SPAN>rezenty i <SPAN class="first-letter">K</SPAN>wiaty</H2>
-                                <H1 class="headline__primary">Prezenty i&nbsp;Kwiaty</H1>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
-                                ✻
-                            </DIV>
-                            <P style="text-align: center;">
-                                Aby ulżyć Wam w udręce, co za paczkę dać w prezencie<br />
-                                Młoda Para Podpowiada, i zarazem pięknie prosi<br />
-                                <span style="font-weight: bold;">Zamiast kwiatów i prezentów, by w kopertę włożyć grosik.</span>
-                            </P>
-                        </DIV>
-                    </DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-    <HEADER class="article__header article__header--page two-thirds-height" id="post-3-title" data-type="image">
-        <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Lokalizacja" src="img/frontpage-menu-localizacja.jpg">
-            <div class="overlay"></div>
-        </DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">G</SPAN>dzie i <SPAN class="first-letter">K</SPAN>iedy</H2>
-                    <H1 class="headline__primary">LOKALIZACJA</H1></HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--subpage border-simple post-3 page type-page status-publish has-post-thumbnail hentry" id="post-3">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item six-twelfths palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">G</SPAN>dzie i <SPAN class="first-letter">K</SPAN>iedy</H2>
-                                <H1 class="headline__primary">Lokalizacja</H1>
-                            </HGROUP>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
-                                ✻
-                            </DIV>
-                            <P class="pl-lang" style="text-align: center;">
-                                <strong>Uroczystość zaślubin oraz wesele</strong>
-                                <br />
-                                <strong>odbędzie się </strong>
-                                <br />
-                                <strong style="text-transform: uppercase; font-size: 1.2em; color: #ff0000; font-style: italic">3 Czerwca 2016</strong>
-                                <br />
-								<strong style="text-transform: uppercase; font-size: 1.2em; color: #ff0000; font-style: italic">o godz. 16:00</strong>
-                                <br />
-                                <strong>w Cedrowym Dworku w Cedrach Wielkich</strong>
-                            </p>
-                            <P class="pl-lang" style="text-align: center;">
-                                <strong>ADRES:</strong>
-                                <br />
-                                <strong>ul. Osadników Wojskowych 39a</strong>
-                                <br />
-                                <strong>83-020 Cedry Wielkie</strong>
-                            </p>
-                            <P class="pl-lang" style="text-align: center;">
-                                tel. +48 58 68 31 000<br />
-                                <a href="mailto:recepcja@cedrowydworek.pl">recepcja@cedrowydworek.pl</a>
-                            </p>
-                        </DIV>
-                        <DIV class="grid__item six-twelfths palm-one-whole">
-                            <div id="map"></div>
-                        </DIV>
-                    </DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-	<HEADER class="article__header article__header--page two-thirds-height" id="post-6-title" data-type="image">
-        <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Discover Menu" src="img/kontakt.jpg">
-        </DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">K</SPAN>ontakt</H2>
-                    <H1 class="headline__primary">Kontakt</H1>
-                </HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--subpage border-simple post-6 page type-page status-publish has-post-thumbnail hentry" id="post-6">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">K</SPAN>ontakt</H2>
-                                <H1 class="headline__primary">Kontakt</H1>
-                            </HGROUP>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
-                                ✻
-                            </DIV>
-                            <P class="pl-lang" style="text-align: center;">
-                                <strong style="font-size: 1.6em;">OLA: </strong>
-                                <br />
-                                <strong>Tel: </strong> 00353 87 963 8401
-                                <br />
-                                <strong>Email: </strong><a href="mailto:aleksandraptak83@gmail.com">aleksandraptak83@gmail.com</a>
-                                <br />
-                            </p>
-                            <P class="pl-lang" style="text-align: center;">
-                                <strong style="font-size: 1.6em;">TOMEK: </strong>
-                                <br />
-                                <strong>Tel: </strong> 00353 87 055 7774
-                                <br />
-                                <strong>Email: </strong><a href="mailto:piechota.tomasz@gmail.com">piechota.tomasz@gmail.com</a>
-                                <br />
-                            </p>
-                        </DIV>
-                    </DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-    <HEADER class="article__header article__header--page two-thirds-height" id="post-4-title" data-type="image">
-        <DIV class="article__parallax">
-        <IMG class="article__parallax__img" alt="Discover Menu" src="img/three-col-rsvp.jpg"></DIV>
-        <DIV class="flexbox">
-            <DIV class="flexbox__item">
-                <HGROUP class="article__headline">
-                    <H2 class="headline__secondary"><SPAN class="first-letter">R</SPAN>SVP</H2>
-                    <H1 class="headline__primary">Potwierdzenie</H1></HGROUP>
-            </DIV>
-        </DIV>
-    </HEADER>
-    <ARTICLE class="article--page article--main article--subpage border-simple post-4 page type-page status-publish has-post-thumbnail hentry" id="post-4">
-        <SECTION class="article__content">
-            <DIV class="container">
-                <SECTION class="page__content  js-post-gallery  cf">
-                    <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item palm-one-whole island">
-                            <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">R</SPAN>SVP</H2>
-                                <H1 class="headline__primary">Potwierdzenie</H1></HGROUP>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--dark">
-                                ✻
-                            </DIV>
-                            <!-- RSVP FORM START -->
-                            <div class="signin-form">
-                                <div class="container" id="container">
-                                    <form class="form-signin" method="post" id="rsvp-form">
-                                        <div id="error">
-                                            <!-- error will be shown here ! -->
-                                        </div>
-                                        <div id="form-new">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name0" id="guest_name0"/>
-                                                <span id="check-guest_name0"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Adres email" name="guest_email" id="guest_email"/>
-                                                <span id="check-e"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Telefon" name="guest_phone" id="guest_phone" maxlength="17"/>
-                                                <span id="check-guest_phone"></span>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 columns">
-                                                    <label for="radio_yes" class="radio-inline radio_yes_no radio_yes_ checked"><input type="radio" id="radio_yes" name="guest_attend" value="1" checked/><i></i> <span>Przyjadę</span></label>
-                                                    <label for="radio_no" class="radio-inline radio_yes_no radio_no_"><input type="radio" id="radio_no" name="guest_attend" value="0" /><i></i> <span>Nie przyjadę</span></label>
-                                                </div>
-                                            </div>
-                                            <div id="form_new_no">
-                                                <div class="form-group">
-                                                    <div class="col-md-12 columns">
-                                                        <label for="guest_veg0_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg0_no" name="guest_veg0" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                        <label for="guest_veg0_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg0_yes" name="guest_veg0" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <select name="guest_guests" id="guest_guests" class="form-control" data-show-icon="true" placeholder="Dodatkowi goście" data-content="<i class='glyphicon glyphicon-cutlery'></i>">
-                                                        <option id="select-placeholder" value="-1" disabled selected>Dodatkowi goście</option>
-                                                        <option value="0">Tylko Ja</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                                <div id="guest_guests_row1">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name1" id="guest_name1"/>
-                                                        <span id="check-guest_name1"></span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12 columns">
-                                                            <label for="guest_veg1_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg1_no" name="guest_veg1" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                            <label for="guest_veg1_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg1_yes" name="guest_veg1" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="guest_guests_row2">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name2" id="guest_name2"/>
-                                                        <span id="check-guest_name2"></span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12 columns">
-                                                            <label for="guest_veg2_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg2_no" name="guest_veg2" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                            <label for="guest_veg2_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg2_yes" name="guest_veg2" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="guest_guests_row3">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name3" id="guest_name3"/>
-                                                        <span id="check-guest_name3"></span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12 columns">
-                                                            <label for="guest_veg3_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg3_no" name="guest_veg3" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                            <label for="guest_veg3_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg3_yes" name="guest_veg3" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="guest_guests_row4">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name4" id="guest_name4"/>
-                                                        <span id="check-guest_name4"></span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12 columns">
-                                                            <label for="guest_veg4_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg4_no" name="guest_veg4" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                            <label for="guest_veg4_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg4_yes" name="guest_veg4" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="guest_guests_row5">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control alpha-only" placeholder="Imię i nazwisko" name="guest_name5" id="guest_name5"/>
-                                                        <span id="check-guest_name5"></span>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12 columns">
-                                                            <label for="guest_veg5_no" class="radio-inline radio_veg_yes_no radio_veg_no_ checked"><input type="radio" id="guest_veg5_no" name="guest_veg5" value="0" checked /><i></i> <span>Jem mięso</span></label>
-                                                            <label for="guest_veg5_yes" class="radio-inline radio_veg_yes_no radio_veg_yes_"><input type="radio" id="guest_veg5_yes" name="guest_veg5" value="1" /><i></i> <span>Nie jem mięsa</span></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" name="guest_comment" rows="3" cols="28" id="guest_comment" placeholder="Wiadomość dla Oli i Tomka"></textarea>
-                                            </div>
-                                            <hr/>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-default" name="btn-save" id="btn-submit">
-                                                <span class="glyphicon glyphicon-send"></span><span class="btn-value">Wyślij</span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- RSVP FORM END -->
-                        </DIV>
-					</DIV>
-                </SECTION>
-            </DIV>
-        </SECTION>
-    </ARTICLE>
-
-    <FOOTER class="site-footer ">
-        <DIV class="copyright-area copyright-area__dark">
-            <svg xmlns="http://www.w3.org/2000/svg" class="blurp--bottom" id="Layer_1" enable-background="new 0 0 160.7 61.5" viewBox="0 0 160.7 61.5" x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1"><path fill="#ffffff" d="M 80.3 61.5 c 0 0 22.1 -2.7 43.1 -5.4 s 41 -5.4 36.6 -5.4 c -21.7 0 -34.1 -12.7 -44.9 -25.4 S 95.3 0 80.3 0 c -15 0 -24.1 12.7 -34.9 25.4 S 22.3 50.8 0.6 50.8 c -4.3 0 -6.5 0 3.5 1.3 S 36.2 56.1 80.3 61.5 Z"/></svg>
-            <DIV class="btn--top">
-                <A class="btn--top_text" href="#">
-                    <SPAN class="btn__arrow btn__arrow--top"></SPAN><SPAN class="btn__arrow btn__arrow--bottom"></SPAN>
-                </A>
-            </DIV>
-        </DIV>
-    </FOOTER>
-    <DIV class="covers"></DIV>
-</DIV>
-<SCRIPT src="js/plugins.js" type="text/javascript"></SCRIPT>
-
-<SCRIPT type="text/javascript">
-    var objectl10n = {
-        "tPrev": "Previous (Left arrow key)",
-        "tNext": "Next (Right arrow key)",
-        "tCounter": "of",
-        "infscrLoadingText": "",
-        "infscrReachedEnd": ""
-    };
-</SCRIPT>
-
-<SCRIPT src="js/main.js" type="text/javascript"></SCRIPT>
-<SCRIPT type="text/javascript">
-    ;(function ($) {
-
-    })(jQuery);
-</SCRIPT>
-
-<!-- custom script - start -->
-<script src="rsvp/bootstrap/js/bootstrap.min.js"></script>
-<!-- custom script - end -->
-
-</BODY>
-</HTML>
+</body>
+</html>
