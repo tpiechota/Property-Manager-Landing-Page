@@ -1,0 +1,210 @@
+/*<STYLE id="customify_typography_output_style">*/
+h1, h2, h3, h4, h5, h6, hgroup, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, blockquote, .tabs__nav, .popular-posts__time, .pagination li a, .pagination li span {
+    font-family: Source Sans Pro;
+}
+.headline__secondary {
+    font-family: Herr Von Muellerhoff;
+    font-weight: normal;
+}
+.navigation a {
+    font-family: Cabin;
+    font-weight: normal;
+}
+html, .wp-caption-text, .small-link, .post-nav-link__label, .author__social-link, .comment__links, .score__desc {
+    font-family: Cabin;
+}
+/*</STYLE>*/
+
+/*<STYLE id="customify_output_style">*/
+.site-header, .site-header.headroom--not-top, .sub-menu, .headroom--not-top .sub-menu {
+    background-color: #ffffff;
+}
+.site-title--image img {
+    max-height: 90px;
+}
+.page .article__content, .up-link, html, .menu-list__item-title .item_title, .menu-list__item-price, .desc__content {
+    background-color: #ffffff;
+}
+.container, .search__container, .site-header__container, .header--sticky .site-header__container {
+    max-width: 1250px;
+}
+.headline__secondary {
+    margin-bottom: -38px;
+}
+.headline__secondary .first-letter {
+    top: 9px;
+}
+.navigation a {
+    font-size: 13px;
+}
+.navigation a {
+    letter-spacing: 1px;
+}
+.nav--main > .menu-item > a {
+    text-transform: uppercase;
+}
+.nav--main > .menu-item > a {
+    text-decoration: none;
+}
+body {
+    font-size: 16px;
+}
+body {
+    line-height: 1.7;
+}
+a, a:hover, .nav--main a:hover, .headline__secondary, .separator--line-flower,
+.tabs__nav a.current, .tabs__nav a:hover, .btn.btn--text, .btn--text.comments_add-comment,
+.comments_add-comment.read-more-button, .form-submit .btn--text#comment-submit,
+.form-submit #comment-submit.read-more-button, .btn--text.wpcf7-form-control.wpcf7-submit,
+.wpcf7-form-control.wpcf7-submit.read-more-button, .btn--text.otreservations-submit,
+.otreservations-submit.read-more-button, .widget_tag_cloud a.btn--text, .widget_tag_cloud a.read-more-button, .btn.read-more-button,
+a:hover > .pixcode--icon, .widget a:hover, blockquote, .meta-list a.btn:hover,
+.meta-list a.comments_add-comment:hover, .meta-list .form-submit a#comment-submit:hover,
+.form-submit .meta-list a#comment-submit:hover, .meta-list a.wpcf7-form-control.wpcf7-submit:hover,
+.meta-list a.otreservations-submit:hover, .meta-list .widget_tag_cloud a:hover, .widget_tag_cloud .meta-list a:hover, .btn.btn--text:hover,
+.article__content a:not([class]), .article__content a:hover:not([class]):hover,
+.article__header .article__headline .headline__description .star, .read-more-button, .read-more-button:hover, .shop-categories a.active,
+body.woocommerce ul.products li.product .product__button, body.woocommerce ul.products li.product .added_to_cart,
+body.woocommerce ul.products li.product a.added_to_cart, body.woocommerce ul.products li.product .price ins,
+.single-product .entry-summary .price span, body.woocommerce .star-rating span:before, .comment-reply-link {
+    color: #c59d5f;
+}
+.headline__secondary {
+    color: red;
+}
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.35);
+    background: url(img/bg.png) repeat scroll transparent\9; /* ie fallback png background image */
+    color:white;
+}
+.btn--primary, .shop-menu-item .shop-items-number, .comments_add-comment, .form-submit #comment-submit, .btn:hover, .wpcf7-form-control.wpcf7-submit:hover,
+.pagination li a:hover, form.shipping_calculator button.button:hover, .otreservations-submit:hover, .pixcode--icon.square:hover, .pixcode--icon.circle:hover,
+.sidebar--footer__accent, .copyright-area.copyright-area__accent, .menu-list__item-highlight-title {
+    background-color: #c59d5f;
+}
+body.woocommerce button.button.alt:hover, body.woocommerce-page #respond input#submit:hover,
+body.woocommerce div.woocommerce-message .button:hover, td.actions input.button:hover, body.woocommerce-page input.button:hover,
+body.woocommerce-page input.button.alt:hover, a:hover > .pixcode--icon.circle, a:hover > .pixcode--icon.square {
+    background: #c59d5f;
+}
+.tabs__nav a.current, .tabs__nav a:hover, .btn.btn--text, .btn--text.comments_add-comment, .comments_add-comment.read-more-button,
+.form-submit .btn--text#comment-submit, .form-submit #comment-submit.read-more-button,
+.btn--text.wpcf7-form-control.wpcf7-submit, .wpcf7-form-control.wpcf7-submit.read-more-button,
+.btn--text.otreservations-submit, .otreservations-submit, .read-more-button,
+.widget_tag_cloud a.btn--text, .widget_tag_cloud a.read-more-button, .btn.read-more-button, blockquote, .article__content a:not([class]), .shop-categories a.active,
+body.woocommerce ul.products li.product .product__button, body.woocommerce ul.products li.product .added_to_cart, .menu-list__item-highlight-wrapper:before {
+    border-color: #c59d5f;
+}
+select:focus, textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus, input[type="datetime"]:focus,
+input[type="datetime-local"]:focus, input[type="date"]:focus,
+input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus,
+input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .form-control:focus {
+    outline-color: #c59d5f;
+}
+.copyright-area.copyright-area__accent svg path {
+    fill: #c59d5f;
+}
+body, .up-link {
+    color: #515150;
+}
+.up-link:before {
+    border-color: #515150;
+}
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .article-archive .article__title a, .article-archive .article__title a:hover {
+    color: #262526;
+}
+.article__header .article__headline .headline__primary,
+.article__header .article__headline .headline__description * {
+    color: #ffffff;
+}
+@media screen and (min-width: 900px) {
+    .site-header {
+        padding-top: 0;
+    }
+    .nav--main > .menu-item > a {
+        padding-left: 24px;
+    }
+    body .navigator, body .covers {
+        /*margin-right: 12px;*/
+        margin-right: 0;
+
+    }
+}
+@media screen and (min-width: 900px) {
+    .site-header {
+        padding-bottom: 0;
+    }
+    .nav--main > .menu-item > a {
+        padding-right: 24px;
+    }
+    body .site-footer {
+        border-bottom-width: 12px;
+    }
+}
+@media screen and (min-width: 900px) {
+    #page {
+        margin-top: 0;
+    }
+    body .site-header {
+        border-top-width: 12px;
+    }
+}
+@media screen and (min-width: 900px) {
+    #page {
+        top: 0;
+    }
+    body .site-header {
+        border-left-width: 12px;
+    }
+}
+@media screen and (min-width: 900px) {
+    body {
+        /*border-width: 12px;*/
+        border-width: 0;
+    }
+}
+@media screen and (min-width: 900px) {
+    body .site-header {
+        border-right-width: 12px;
+    }
+}
+@media screen and (min-width: 900px) {
+    body .covers {
+        /*margin-left: 12px;*/
+        margin-left: 0;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .page .type-page .article__content {
+        padding-top: 78px;
+    }
+    .sidebar--main {
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .page .type-page .article__content {
+        padding-bottom: 78px;
+    }
+    .page-content.has-sidebar:after {
+        right: 300px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .page-content.has-sidebar .page-content__wrapper {
+        margin-right: 300px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .page-content.has-sidebar {
+        margin-right: -300px;
+    }
+}
