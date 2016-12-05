@@ -252,7 +252,7 @@
     </DIV>
     <HEADER class="article__header article__header--page full-height" id="post-1-title" style="min-height: inherit !important;">
         <DIV class="article__parallax">
-            <IMG class="article__parallax__img" alt="Home Page" src="img/oit_2016_front.jpg">
+            <IMG class="article__parallax__img" alt="Home Page" src="assets/images/PropertyManager.jpg">
             <svg xmlns="http://www.w3.org/2000/svg" class="blurp--top" id="Layer_1" enable-background="new 0 0 160.7 61.5" viewBox="0 0 160.7 61.5"
 x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
                 <path fill="#ffffff" d="M 80.3 61.5 c 0 0 22.1 -2.7 43.1 -5.4 s 41 -5.4 36.6 -5.4 c -21.7 0 -34.1 -12.7 -44.9 -25.4 S 95.3 0 80.3 0 c -15 0 -24.1 12.7 -34.9 25.4 S 22.3 50.8 0.6 50.8 c -4.3 0 -6.5 0 3.5 1.3 S 36.2 56.1 80.3 61.5 Z"
@@ -287,44 +287,26 @@ x="0px" y="0px" width="192" height="61" xmlns:xml="http://www.w3.org/XML/1998/na
             <DIV class="container">
                 <SECTION class="page__content  js-post-gallery  cf">
                     <DIV class="pixcode  pixcode--grid  grid  ">
-                        <DIV class="grid__item six-twelfths palm-one-whole island">
+                        <DIV class="grid__item one-whole palm-one-whole island">
                             <HGROUP class="pixcode  pixcode--heading article__headline">
-                                <H2 class="headline__secondary"><SPAN class="first-letter">O</SPAN> nas</H2>
-                                <H1 class="headline__primary">Ola i Tomek</H1></HGROUP>
-                            <DIV class="pixcode  pixcode--separator  separator separator--flower separator_color--color">
-                                ✻
-                            </DIV>
-                            <P class="pl-lang" style="text-align: center;">
-                                Spotkaliśmy się 7 lat temu w małym miasteczku na końcu świata, zwanym Dublinem. Troszkę przy pomocy muzyki, przyjaciół i odrobiny alkoholu, odkryliśmy siebie.
-                                <br />Nasza wspólna przygoda trwa nadal, a każdy dzień jest inny i szczególny, trochę szalony i wariacki, czasami poważny i "dorosły".
-                            </p>
-                            <P class="pl-lang" style="text-align: center;">
-                                Chcemy uczcić tych kilka wspaniałych lat spędzonych razem, pochwalić i podzielić się naszym szczęściem, więc zapraszamy Was na małą zabawę z super jedzeniem w uroczej scenerii.
-                            </p>
-                            <P style="text-align: center;">
-                                &nbsp;
-                            </P>
+                                <H4 class="headline__secondary">See How Much You Can make</H4>
+                                <p>How many units do you currently manage?</p>
+                            </HGROUP>
                         </DIV>
-                        <DIV class="grid__item six-twelfths palm-one-whole">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_1.jpg">
-                                    <IMG width="1080" height="810" class="alignnone size-large wp-image-442" alt="vertical-photo-1" src="img/ola_i_tomek_1m.jpg">
-                                </A>
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item three-twelfths palm-one-whole ">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_682x1024_ola.jpg">
-                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_ola.jpg" />
-                                </A>
-                            </P>
-                        </DIV>
-                        <DIV class="grid__item three-twelfths palm-one-whole ">
-                            <P style="text-align: center;">
-                                <A href="img/ola_i_tomek_682x1024_dog.jpg">
-                                    <IMG width="682" height="1024" class="alignnone size-large wp-image-443" alt="vertical-photo-2" src="img/ola_i_tomek_682x1024_dog.jpg" />
-                                </A>
-                            </P>
+                        <DIV class="grid__item one-whole palm-one-whole">
+                            <div id="calculation">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="units">Number Of Units:</label>
+                                        <input type="number" class="form-control" id="units" placeholder="Number Of Units" min="1" />
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Calculate</button>
+                                </form>
+                                <p class="result">
+                                    You could make up to <b>$ per week</b>!
+                                    <a class="btn btn-primary" href="">Apply now</a>
+                                </p>
+                            </div>
                         </DIV>
                     </DIV>
                 </SECTION>

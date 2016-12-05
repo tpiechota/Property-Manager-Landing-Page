@@ -6590,7 +6590,7 @@ input[type='color']:-ms-input-placeholder {
 	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
 }
 .btn--primary {
-	color: white; background-color: rgb(197, 157, 95);
+	/*color: white; background-color: rgb(197, 157, 95);*/
 }
 .comments_add-comment {
 	color: white; background-color: rgb(197, 157, 95);
@@ -6599,7 +6599,7 @@ input[type='color']:-ms-input-placeholder {
 	color: white; background-color: rgb(197, 157, 95);
 }
 .btn--primary:hover {
-	background-color: rgb(38, 37, 38) !important;
+	/*background-color: rgb(38, 37, 38) !important;*/
 }
 .comments_add-comment:hover {
 	background-color: rgb(38, 37, 38) !important;
